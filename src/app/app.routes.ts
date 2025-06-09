@@ -17,5 +17,10 @@ export const routes: Routes = [
     loadComponent: () => import('./components/login/crypto-list/crypto-list.component').then(m => m.CryptoListComponent),
     canActivate: [AuthGuard]
   },
+  { 
+    path: 'crypto/:id', 
+    loadComponent: () => import('./components/login/crypto-list/crypto-detail.component').then(m => m.CryptoDetailComponent),
+    canActivate: [AuthGuard]
+  },
   { path: '**', redirectTo: '/login' }
 ];
