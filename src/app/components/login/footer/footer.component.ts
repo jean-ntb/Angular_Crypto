@@ -1,11 +1,16 @@
 import { Component } from '@angular/core';
+/*Rôle :
 
+- Informations footer
+- Copyright
+- Liens utiles (futur)
+- Toujours visible*/ 
 @Component({
   selector: 'app-footer',
   standalone: true,
   template: `
     <footer>
-      <p>&copy; 2024 Crypto App - Projet Angular</p>
+      <p>&copy; 2025 Crypto App - Projet Angular</p>
     </footer>
   `,
   styles: [`

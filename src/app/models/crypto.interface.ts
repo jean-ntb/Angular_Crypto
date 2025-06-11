@@ -1,3 +1,4 @@
+// définit la structure d'un objet Crypto
 export interface Crypto {
   id: string;
   symbol: string;

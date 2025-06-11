@@ -13,9 +13,9 @@ export class AuthService {
       this.currentUser.set(JSON.parse(savedUser));
     }
   }
-
+ // login(email, password)
+  //    Simule une connexion : si les identifiants sont bons, on connecte l’utilisateur.
   login(email: string, password: string): boolean {
-    // Simulation d'une connexion
     if (email === 'user@test.com' && password === 'password') {
       const user: User = {
         id: 1,
@@ -29,7 +29,8 @@ export class AuthService {
     }
     return false;
   }
-
+// Deconnecte l’utilisateur
+  // Supprime les données de l’utilisateur du service et du localStorage
   logout(): void {
     this.currentUser.set(null);
     localStorage.removeItem('user');

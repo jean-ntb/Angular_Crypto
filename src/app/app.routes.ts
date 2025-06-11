@@ -1,6 +1,13 @@
 import { Routes } from '@angular/router';
 import { AuthGuard } from './guards/auth.guard';
 
+/*
+Définit toutes les routes/URLs de l'application
+- Associe chaque URL à un composant
+
+- Gère le lazy loading (chargement à la demande)
+
+- Applique les guards de sécurité */ 
 export const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { 

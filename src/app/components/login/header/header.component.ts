@@ -2,6 +2,12 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { AuthService } from '../../../services/auth.service';
+/*Rôle :
+
+- Barre de navigation principale
+- Visible seulement si connecté
+- Liens vers pages principales
+- Bouton déconnexion*/ 
 @Component({
   selector: 'app-header',
   standalone: true,
@@ -72,7 +78,7 @@ import { AuthService } from '../../../services/auth.service';
 })
 export class HeaderComponent {
   constructor(public authService: AuthService) {}
-
+// Fonction de déconnexion
   logout(): void {
     this.authService.logout();
   }

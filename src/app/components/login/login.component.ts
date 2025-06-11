@@ -3,7 +3,12 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
+/*Rôle :
 
+- Affiche le formulaire de connexion
+- Capture email/mot de passe
+- Communique avec AuthService
+- Redirige après connexion réussi */ 
 @Component({
   selector: 'app-login',
   standalone: true,
@@ -95,7 +100,9 @@ export class LoginComponent {
     private authService: AuthService,
     private router: Router
   ) {}
-
+// Rôle : Gère la soumission du formulaire de connexion
+  // Vérifie les identifiants via AuthService
+  // Redirige vers /cryptos si succès, sinon affiche une erreur
   onSubmit(): void {
     if (this.authService.login(this.email, this.password)) {
       this.router.navigate(['/cryptos']);

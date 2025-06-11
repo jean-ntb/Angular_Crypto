@@ -5,6 +5,12 @@ import { Router } from '@angular/router';
 import { CryptoService } from '../../../services/crypto.service';
 import { Crypto } from '../../../models/crypto.interface';
 
+/*Rôle :
+
+- Affiche toutes les cryptomonnaies
+- Barre de recherche/filtrage
+- Navigation vers le détail
+- Mise à jour temps réel */
 @Component({
   selector: 'app-crypto-list',
   standalone: true,
@@ -124,9 +130,10 @@ import { Crypto } from '../../../models/crypto.interface';
     }
   `]
 })
+
 export class CryptoListComponent implements OnInit {
-  cryptos: Crypto[] = [];
-  filteredCryptos: Crypto[] = [];
+  cryptos: Crypto[] = []; /** Liste complète des cryptomonnaies récupérées depuis l'API */
+  filteredCryptos: Crypto[] = []; /** Liste complète des cryptomonnaies récupérées depuis l'API */
   searchTerm: string = '';
   loading = true;
 
@@ -134,7 +141,7 @@ export class CryptoListComponent implements OnInit {
     private cryptoService: CryptoService,
     private router: Router
   ) {}
-
+// Récupère les cryptomonnaies au chargement du composant
   ngOnInit(): void {
     this.cryptoService.getCryptos().subscribe({
       next: (data: Crypto[]) => {
@@ -147,7 +154,7 @@ export class CryptoListComponent implements OnInit {
       }
     });
   }
-
+// Filtre les cryptomonnaies en fonction du terme de recherche
   filterCryptos(): void {
     if (!this.searchTerm.trim()) {
       this.filteredCryptos = this.cryptos;

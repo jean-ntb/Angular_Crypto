@@ -3,7 +3,12 @@ import { CommonModule } from '@angular/common';
 import { AuthService } from '../../../services/auth.service';
 import { ApiService } from '../../../services/api.service';
 import { User } from '../../../models/user.interface';
+/*Rôle :
 
+- Affiche informations utilisateur
+- Récupère données depuis AuthService
+- Appel API pour infos supplémentaires
+- Page protégée par AuthGuard*/ 
 @Component({
   selector: 'app-profile',
   standalone: true,

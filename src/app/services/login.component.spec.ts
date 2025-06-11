@@ -8,7 +8,8 @@ describe('LoginComponent', () => {
   let fixture: ComponentFixture<LoginComponent>;
   let authServiceSpy: jasmine.SpyObj<AuthService>;
   let routerSpy: jasmine.SpyObj<Router>;
-
+// Création d'un "spy" (espion) qui simule ApiService
+    // On dit à Jasmine : "crée un faux ApiService avec une méthode 'get'"
   beforeEach(() => {
     const authSpy = jasmine.createSpyObj('AuthService', ['login']);
     const routerMock = jasmine.createSpyObj('Router', ['navigate']);
